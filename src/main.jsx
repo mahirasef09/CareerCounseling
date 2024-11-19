@@ -11,15 +11,28 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import MyProfile from './Layouts/MyProfile';
 import AuthProvider from './Providers/AuthProvider';
+import ConsultantInfo from './Components/ConsultantInfo';
+import Root from './Layouts/Root';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
-  },
-  {
-    path: "/myprofile",
-    element: <MyProfile></MyProfile>,
+    element: <Root></Root>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/consultant/:id",
+        element: <ConsultantInfo></ConsultantInfo>,
+        loader: () => fetch('counselingData.json'),
+      },
+      {
+        path: "/myprofile",
+        element: <MyProfile></MyProfile>,
+      },
+    ],
   },
   {
     path: "/auth",
