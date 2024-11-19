@@ -21,6 +21,7 @@ const ConsultantInfo = () => {
 
                 </footer>
             </div>
+
             <div className='flex justify-center items-center'>
                 <div className="card card-compact bg-base-100 w-96 shadow-xl">
                     <figure>
@@ -41,6 +42,8 @@ const ConsultantInfo = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

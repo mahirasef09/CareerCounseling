@@ -5,6 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Home from './Layouts/Home';
 import Auth from './Layouts/Auth';
 import Login from './Components/Login';
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ConsultantInfo></ConsultantInfo>
         </PrivateRoute>,
-        loader: () => fetch('counselingData.json'),
+        loader: () => fetch('/counselingData.json'),
       },
       {
         path: "/myprofile",
@@ -58,5 +61,18 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    
+    <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
   </StrictMode>,
 )

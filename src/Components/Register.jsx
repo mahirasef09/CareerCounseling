@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const Register = () => {
@@ -23,11 +24,13 @@ const Register = () => {
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if (!passwordRegex.test(password)) {
             setErrorMessage("Password must have one Uppercase, one Lowercase Letter and at least 6 characters");
+            toast("Password must have one Uppercase, one Lowercase Letter and at least 6 characters");
             return;
         }
 
         if (!terms) {
             setErrorMessage("Plz accept our terms & conditions");
+            toast("Plz accept our terms & conditions");
             return;
         }
 
@@ -35,17 +38,20 @@ const Register = () => {
             .then((result) => {
                 const currentUser = result.user;
                 setUser(currentUser);
+                e.target.reset();
+                toast("Registration Successful");
                 updateUserProfile({ displayName: name, photoURL: photoUrl })
                     .then(() => {
+                        toast("User Profile Updated Successful");
                         navigate("/")
                     })
                     .catch((err) => {
-                        alert(err)
+                        toast(err.message)
                     })
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+            .catch((err) => {
+                toast(err.message);
+                e.target.reset();
             });
     }
 
@@ -89,14 +95,15 @@ const Register = () => {
                             <span className="label-text text-red-600 font-semibold">Accept Our Terms & Conditions</span>
                         </label>
                     </div>
+                    {
+                        errorMessage && <p className='text-red-600 mx-auto my-3 p-3'>{errorMessage}</p>
+                    }
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral">Register</button>
                     </div>
                 </form>
                 <p className='text-center font-semibold'>Already Have An Account ? <Link className='text-blue-500' to={"/auth/login"}>Login</Link></p>
-                {
-                    errorMessage && <p className='text-red-600 mx-auto my-3 p-3'>{errorMessage}</p>
-                }
+
             </div>
         </div>
     );

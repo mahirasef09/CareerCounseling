@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const { userLogin, signInUserWithGoogle, setUser } = useContext(AuthContext);
@@ -18,22 +19,27 @@ const Login = () => {
             .then((result) => {
                 const currentUser = result.user;
                 setUser(currentUser);
-                navigate(location?.state ? location.state : "/")
+                toast("Login Successful");
+                e.target.reset();
+                navigate(location?.state ? location.state : "/");
             })
             .catch((err) => {
-                alert(err.message);
+                toast(err.message);
+                e.target.reset();
             });
     }
 
-    const handleGoogleSignIn = ()=>{
+    const handleGoogleSignIn = () => {
         signInUserWithGoogle()
-        .then(result => {
-            console.log(result.user);
-            navigate('/');
-        })
-        .catch(err => {
-            alert(err.message);
-        })
+            .then(result => {
+                const currentUser = result.user;
+                setUser(currentUser);
+                toast("Login Successful with Google");
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(err => {
+                toast(err.message);
+            })
     }
 
     return (
