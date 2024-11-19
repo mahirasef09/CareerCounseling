@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "https://i.ibb.co.com/FsK678Y/1.jpg",
+        "serviceName": "Personal Career Coaching",
+        "category": "Online, Single",
+        "briefDescription": "This one-on-one session offers personalized career guidance to help you identify your strengths, explore potential career paths, and create actionable steps to achieve your professional goals. Ideal for those seeking clarity in their career direction.",
+        "price": "$50",
+        "duration": "05-12-24 5:00 PM - 6:00 PM",
+        "counselor": "Dr. Sarah Lee",
+        "rating": 4.8
+    },
+    {
+        "id": 2,
+        "imageUrl": "https://i.ibb.co.com/GFvwy5D/2.jpg",
+        "serviceName": "Group Career Workshop",
+        "category": "Offline, Group",
+        "briefDescription": "An engaging group session designed to enhance your career readiness. Participants will work through real-life scenarios, develop networking skills, and gain insights into building a strong professional presence.",
+        "price": "$20",
+        "duration": "07-12-24 10:00 AM - 12:00 PM",
+        "counselor": "Mr. James Patel",
+        "rating": 4.5
+    },
+    {
+        "id": 3,
+        "imageUrl": "https://i.ibb.co.com/XzZ5TNg/3.jpg",
+        "serviceName": "Resume and Cover Letter Building",
+        "category": "Online, Single",
+        "briefDescription": "This session focuses on crafting a professional resume and cover letter that highlight your unique skills and experiences. Learn how to tailor your application materials to specific job roles for maximum impact.",
+        "price": "$40",
+        "duration": "06-12-24 3:00 PM - 4:30 PM",
+        "counselor": "Ms. Angela Carter",
+        "rating": 4.9
+    },
+    {
+        "id": 4,
+        "imageUrl": "https://i.ibb.co.com/m6byyNf/4.jpg",
+        "serviceName": "College to Career Transition Counseling",
+        "category": "Offline, Single",
+        "briefDescription": "Designed for recent graduates, this session helps you navigate the transition from college to a professional career. Gain practical advice on building experience, job searching, and acing your first interviews.",
+        "price": "$60",
+        "duration": "08-12-24 1:00 PM - 2:30 PM",
+        "counselor": "Dr. Emily Chan",
+        "rating": 4.7
+    },
+    {
+        "id": 5,
+        "imageUrl": "https://i.ibb.co.com/BzDrxFV/5.jpg",
+        "serviceName": "Interview Preparation Bootcamp",
+        "category": "Online, Group",
+        "briefDescription": "A comprehensive bootcamp to help you succeed in interviews. Practice with mock interviews, learn effective communication techniques, and get feedback to improve your performance and confidence.",
+        "price": "$30",
+        "duration": "09-12-24 4:00 PM - 6:00 PM",
+        "counselor": "Mr. David Harris",
+        "rating": 4.6
+    },
+    {
+        "id": 6,
+        "imageUrl": "https://i.ibb.co.com/J3Hc2QH/6.jpg",
+        "serviceName": "Long-Term Career Planning",
+        "category": "Online, Single",
+        "briefDescription": "This session offers in-depth guidance to create a long-term career roadmap. Whether you're looking to advance in your current field or switch industries, our experts help you plan strategically for sustained success.",
+        "price": "$70",
+        "duration": "10-12-24 11:00 AM - 12:30 PM",
+        "counselor": "Dr. Monica Reyes",
+        "rating": 4.9
+    }
+]
