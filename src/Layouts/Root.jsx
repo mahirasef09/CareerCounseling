@@ -6,9 +6,15 @@ import Footer from '../Components/Footer';
 const Root = () => {
     return (
         <div>
-            <NavBar></NavBar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+            <header>
+                <NavBar></NavBar>
+            </header>
+            <main>
+                <Outlet></Outlet>
+            </main>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

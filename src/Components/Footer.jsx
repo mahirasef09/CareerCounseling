@@ -3,7 +3,7 @@ import { RiDiscussLine } from "react-icons/ri";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center bg-neutral text-primary-content p-10">
+            <footer className="mt-10 footer footer-center bg-neutral text-primary-content p-10">
                 <aside>
                     <RiDiscussLine></RiDiscussLine>
                     <p className="font-bold">

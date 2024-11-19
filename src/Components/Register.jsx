@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -15,6 +18,18 @@ const Register = () => {
         const photoUrl = form.get("photoUrl");
         const email = form.get("email");
         const password = form.get("password");
+        const terms = e.target.terms.checked;
+
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+            setErrorMessage("Password must have one Uppercase, one Lowercase Letter and at least 6 characters");
+            return;
+        }
+
+        if (!terms) {
+            setErrorMessage("Plz accept our terms & conditions");
+            return;
+        }
 
         createNewUser(email, password)
             .then((result) => {
@@ -57,15 +72,20 @@ const Register = () => {
                         </label>
                         <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                     </div>
-                    <div className="form-control">
+                    <div className="relative form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                        <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
+                        <p
+                            onClick={() => setShowPassword(!showPassword)}
+                            className='btn btn-xs absolute right-4 top-12'>
+                            {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                        </p>
                     </div>
                     <div className="form-control">
                         <label className="label justify-start gap-2 cursor-pointer">
-                            <input type="checkbox" className="checkbox" />
+                            <input type="checkbox" name="terms" className="checkbox" />
                             <span className="label-text text-red-600 font-semibold">Accept Our Terms & Conditions</span>
                         </label>
                     </div>
@@ -74,6 +94,9 @@ const Register = () => {
                     </div>
                 </form>
                 <p className='text-center font-semibold'>Already Have An Account ? <Link className='text-blue-500' to={"/auth/login"}>Login</Link></p>
+                {
+                    errorMessage && <p className='text-red-600 mx-auto my-3 p-3'>{errorMessage}</p>
+                }
             </div>
         </div>
     );

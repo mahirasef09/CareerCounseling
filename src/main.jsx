@@ -13,6 +13,7 @@ import MyProfile from './Layouts/MyProfile';
 import AuthProvider from './Providers/AuthProvider';
 import ConsultantInfo from './Components/ConsultantInfo';
 import Root from './Layouts/Root';
+import PrivateRoute from './PrivateRoutes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/consultant/:id",
-        element: <ConsultantInfo></ConsultantInfo>,
+        element: <PrivateRoute>
+          <ConsultantInfo></ConsultantInfo>
+        </PrivateRoute>,
         loader: () => fetch('counselingData.json'),
       },
       {
