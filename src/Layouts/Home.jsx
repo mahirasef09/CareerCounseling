@@ -5,7 +5,7 @@ import Slider from "../Components/Slider";
 
 const Home = () => {
     return (
-        <div className="mx-auto space-y-5">
+        <div className="mx-auto space-y-20 md:space-y-5">
             <PageTitle title="Career Counseling | Home"></PageTitle>
             <Slider></Slider>
             <Services></Services>

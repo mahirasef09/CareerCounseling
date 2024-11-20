@@ -12,7 +12,6 @@ const ConsultantInfo = () => {
     const handleFeedback = (e) => {
         e.preventDefault();
         const currentFeedback = e.target.feedback.value;
-        console.log(currentFeedback);
         setFeedback(currentFeedback);
     }
 

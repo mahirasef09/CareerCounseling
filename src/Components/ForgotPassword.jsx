@@ -4,27 +4,10 @@ import PageTitle from "./PageTitle";
 
 const ForgotPassword = () => {
     const {userEmail, handleForgotPassword} = useContext(AuthContext);
-    const emailRef = useRef();
-    
-
-    // const handleForgotPassword = () => {
-    //     const emailAddress = emailRef.current.value;
-    //     if (!emailAddress) {
-    //         toast("Please provide a valid email address");
-    //     }
-
-    //     else {
-    //         sendPasswordResetEmail(auth, emailAddress)
-    //         .then(()=>{
-    //             toast("Password Reset email sent, please check your email");
-    //         })
-    //     }
-    // }
 
     const resetClicked = (e) =>{
         e.preventDefault();
-        // const emailAddress = emailRef.current.value;
-        // handleForgotPassword(emailAddress);
+        handleForgotPassword(userEmail);
     }
 
     return (
@@ -37,7 +20,7 @@ const ForgotPassword = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" ref={emailRef} value={userEmail} placeholder="email" className="input input-bordered" required />
+                        <input type="email" name="email" value={userEmail} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control mt-6">
                         <button onClick={resetClicked} className="btn btn-neutral">Reset</button>

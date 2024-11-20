@@ -9,7 +9,7 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [userEmail, setUserEmail] = useState(null);
+    const [userEmail, setUserEmail] = useState('');
     const [authState, setAuthState] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -73,7 +73,7 @@ const AuthProvider = ({ children }) => {
         loading,
         updateUserProfile,
         handleForgotPassword,
-        userEmail,
+        userEmail, 
         setUserEmail,
         authState,
         setAuthState

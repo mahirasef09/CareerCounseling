@@ -8,14 +8,18 @@ import PageTitle from "./PageTitle";
 const Login = () => {
     const { userLogin, signInUserWithGoogle, setUser, setUserEmail } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef();
 
+    const handle = ()=>{
+        setUserEmail(emailRef.current.value);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
-        setUserEmail(email);
         const password = e.target.password.value;
 
         userLogin(email, password)
@@ -68,10 +72,9 @@ const Login = () => {
                             {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                         </p>
                         <label className="label">
-                            <button onClick={handleSubmit}>
+                            <button onClick={handle}>
                                 <Link to={"/auth/forgotpassword"} className="label-text-alt link link-hover">Forgot password?</Link>
                             </button>
-
                         </label>
                     </div>
                     <div className="form-control mt-6">
