@@ -1,5 +1,4 @@
-import Footer from "../Components/Footer";
-import NavBar from "../Components/NavBar";
+
 import Services from "../Components/Services";
 import Slider from "../Components/Slider";
 

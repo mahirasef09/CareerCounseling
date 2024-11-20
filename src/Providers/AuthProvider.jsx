@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import { toast } from "react-toastify";
 
@@ -47,6 +47,19 @@ const AuthProvider = ({ children }) => {
         return updateProfile(auth.currentUser, updatedData)
     }
 
+    const handleForgotPassword = (emailAddress) => {
+        if (!emailAddress) {
+            toast("Please provide a valid email address");
+        }
+
+        else {
+            sendPasswordResetEmail(auth, emailAddress)
+            .then(()=>{
+                toast("Password Reset email sent, please check your email");
+            })
+        }
+    }
+
 
     const authInfo = {
         user,
@@ -56,7 +69,8 @@ const AuthProvider = ({ children }) => {
         signInUserWithGoogle,
         userLogout,
         loading,
-        updateUserProfile 
+        updateUserProfile,
+        handleForgotPassword 
     }
 
     return (

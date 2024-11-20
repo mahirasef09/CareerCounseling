@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -9,6 +9,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    const emailRef = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -51,7 +52,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                        <input type="email" name="email" ref={emailRef} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="relative form-control">
                         <label className="label">
@@ -63,6 +64,9 @@ const Login = () => {
                             className='btn btn-xs absolute right-4 top-12'>
                             {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                         </p>
+                        <label className="label">
+                            <Link to={"/auth/forgotpassword"} className="label-text-alt link link-hover">Forgot password?</Link>
+                        </label>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral">Login</button>

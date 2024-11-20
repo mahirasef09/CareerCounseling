@@ -9,7 +9,7 @@ const ConsultantInfo = () => {
     return (
         <div className='space-y-3 p-5'>
             <div>
-                <footer className="footer footer-center bg-primary text-primary-content p-10 rounded-3xl">
+                <div className="footer footer-center bg-primary text-primary-content p-10 rounded-3xl">
                     <aside>
                         <p className="text-2xl font-bold">
                             <span className='text-5xl'> Career Guidance for you to improve your life</span>
@@ -18,8 +18,7 @@ const ConsultantInfo = () => {
                         </p>
                         <p>Our Consultants</p>
                     </aside>
-
-                </footer>
+                </div>
             </div>
 
             <div className='flex justify-center items-center'>

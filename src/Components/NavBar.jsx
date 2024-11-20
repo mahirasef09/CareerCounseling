@@ -10,6 +10,7 @@ const NavBar = () => {
     const links = <>
         <NavLink to={"/"}><a>Home</a></NavLink>
         <NavLink to={"/myprofile"}><a>My Profile</a></NavLink>
+        <NavLink to={"/whyus"}><a>Why Us</a></NavLink>
     </>
 
     return (
@@ -60,7 +61,7 @@ const NavBar = () => {
                         </div>
                         <div>
                             {
-                                user && user?.email ? <button onClick={userLogout} className="btn btn-neutral">Log Out</button> : <Link to={"/auth/login"} className="btn btn-info">Login</Link>
+                                user && user?.email ? <button onClick={userLogout} className="btn btn-neutral btn-sm">Log Out</button> : <Link to={"/auth/login"} className="btn btn-info btn-sm">Login</Link>
                             }
                         </div>
                     </div>

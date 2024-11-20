@@ -17,6 +17,8 @@ import AuthProvider from './Providers/AuthProvider';
 import ConsultantInfo from './Components/ConsultantInfo';
 import Root from './Layouts/Root';
 import PrivateRoute from './PrivateRoutes/PrivateRoute';
+import ForgotPassword from './Components/ForgotPassword';
+import WhyUs from './Components/WhyUs';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +38,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/myprofile",
-        element: <MyProfile></MyProfile>,
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute>,
+      },
+      {
+        path: "/whyus",
+        element: <PrivateRoute>
+          <WhyUs></WhyUs>
+        </PrivateRoute>,
       },
     ],
   },
@@ -51,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/auth/forgotpassword",
+        element: <ForgotPassword></ForgotPassword>,
       },
     ],
   },
