@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import PageTitle from "./PageTitle";
 
 const Login = () => {
     const { userLogin, signInUserWithGoogle, setUser } = useContext(AuthContext);
@@ -45,6 +46,7 @@ const Login = () => {
 
     return (
         <div className='min-h-screen flex justify-center items-center'>
+            <PageTitle title="Career Counseling | Login"></PageTitle>
             <div className="card bg-gray-100 w-full max-w-lg shrink-0 p-10 rounded-3xl shadow-2xl">
                 <h3 className='text-2xl font-semibold text-center'>Login your account</h3>
                 <form onSubmit={handleSubmit} className="card-body">

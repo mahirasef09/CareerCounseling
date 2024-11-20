@@ -18,12 +18,14 @@ import ConsultantInfo from './Components/ConsultantInfo';
 import Root from './Layouts/Root';
 import PrivateRoute from './PrivateRoutes/PrivateRoute';
 import ForgotPassword from './Components/ForgotPassword';
-import WhyUs from './Components/WhyUs';
+import WhyUs from './Layouts/WhyUs';
+import ErrorPage from './Components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

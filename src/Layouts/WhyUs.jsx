@@ -2,11 +2,13 @@ import { GiTeacher } from "react-icons/gi";
 import { IoBookOutline } from "react-icons/io5";
 import { PiChalkboardTeacherThin } from "react-icons/pi";
 import { RiTeamLine } from "react-icons/ri";
+import PageTitle from "../Components/PageTitle";
 
 
 const WhyUs = () => {
     return (
         <div className="footer footer-center bg-secondary text-primary-content p-10 rounded-3xl">
+            <PageTitle title="Career Counseling | Why Us"></PageTitle>
             <div>
                 <PiChalkboardTeacherThin className="text-5xl"></PiChalkboardTeacherThin>
                 <h3 className="text-3xl font-extrabold">Dedicated Trainers</h3>

@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import PageTitle from "../Components/PageTitle";
 
 const MyProfile = () => {
     const {user} = useContext(AuthContext);
     console.log(user);
     return (
         <div className='space-y-3 p-5'>
+            <PageTitle title="Career Counseling | My Profile"></PageTitle>
             <div>
                 <div className="footer footer-center bg-primary text-primary-content p-10 rounded-3xl">
                     <aside>
