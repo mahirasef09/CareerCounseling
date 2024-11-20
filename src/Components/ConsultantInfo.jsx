@@ -27,7 +27,7 @@ const ConsultantInfo = () => {
                             <br />
                             We provide consultancy services to encourage, manage and boost your career
                         </p>
-                        <p>Our Consultants</p>
+                        <p>Service Details</p>
                     </aside>
                 </div>
             </div>

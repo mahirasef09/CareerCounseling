@@ -3,7 +3,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import PageTitle from "./PageTitle";
 
 const ForgotPassword = () => {
-    const {handleForgotPassword} = useContext(AuthContext);
+    const {userEmail, handleForgotPassword} = useContext(AuthContext);
     const emailRef = useRef();
     
 
@@ -23,8 +23,8 @@ const ForgotPassword = () => {
 
     const resetClicked = (e) =>{
         e.preventDefault();
-        const emailAddress = emailRef.current.value;
-        handleForgotPassword(emailAddress);
+        // const emailAddress = emailRef.current.value;
+        // handleForgotPassword(emailAddress);
     }
 
     return (
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name="email" ref={emailRef} placeholder="email" className="input input-bordered" required />
+                        <input type="email" name="email" ref={emailRef} value={userEmail} placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control mt-6">
                         <button onClick={resetClicked} className="btn btn-neutral">Reset</button>

@@ -43,7 +43,6 @@ const Register = () => {
                 toast("Registration Successful");
                 updateUserProfile({ displayName: name, photoURL: photoUrl })
                     .then(() => {
-                        toast("User Profile Updated Successful");
                         navigate("/")
                     })
                     .catch((err) => {
@@ -66,13 +65,13 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                        <input type="text" name="name" placeholder="name" className="input input-bordered"/>
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" name="photoUrl" placeholder="photo-url" className="input input-bordered" required />
+                        <input type="text" name="photoUrl" placeholder="photo-url" className="input input-bordered"/>
                     </div>
                     <div className="form-control">
                         <label className="label">

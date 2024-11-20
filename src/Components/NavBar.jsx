@@ -53,15 +53,16 @@ const NavBar = () => {
                     <div className="flex gap-2 items-center">
                         <div>
                             {
-                                user && user?.email ? <div className="hidden md:flex gap-2 items-center">
-                                    <img className="w-16 rounded-full" src={user?.photoURL} alt="" />
-                                    <p>{user?.displayName}</p>
-                                </div> : <FaUserTie></FaUserTie>
+                                user && user?.email ? 
+                                <div className="hidden md:flex gap-2 items-center tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                    <img className="w-12 rounded-none" src={user?.photoURL} alt="" />
+                                </div> : 
+                                <FaUserTie></FaUserTie>
                             }
                         </div>
                         <div>
                             {
-                                user && user?.email ? <button onClick={userLogout} className="btn btn-neutral btn-sm">Log Out</button> : <Link to={"/auth/login"} className="btn btn-info btn-sm">Login</Link>
+                                user && user?.email ? <button onClick={userLogout} className="btn btn-neutral btn-sm hover:bg-primary">Log Out</button> : <Link to={"/auth/login"} className="btn btn-info btn-sm">Login</Link>
                             }
                         </div>
                     </div>
