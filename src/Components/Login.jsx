@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef();
 
-    const handle = ()=>{
+    const handleForgotPasswordBtn = ()=>{
         setUserEmail(emailRef.current.value);
     }
 
@@ -72,7 +72,7 @@ const Login = () => {
                             {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                         </p>
                         <label className="label">
-                            <button onClick={handle}>
+                            <button onClick={handleForgotPasswordBtn}>
                                 <Link to={"/auth/forgotpassword"} className="label-text-alt link link-hover">Forgot password?</Link>
                             </button>
                         </label>
