@@ -23,5 +23,6 @@ Career Counselling is a career Guidance website for you to improve your life. We
 https://docs.google.com/document/d/1ErVVKPWEMzrmOn4bp18Vba0nfUpK-KZpqcTvSNffLKU/edit?usp=drive_link
 
 # **Live link to the deployed project:**
+https://career-counseling-websit-c8e9b.web.app/
 
 
