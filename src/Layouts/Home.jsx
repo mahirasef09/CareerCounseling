@@ -1,4 +1,6 @@
 
+import AboutUs from "../Components/AboutUs";
+import Gallery from "../Components/Gallery";
 import PageTitle from "../Components/PageTitle";
 import Services from "../Components/Services";
 import Slider from "../Components/Slider";
@@ -9,6 +11,8 @@ const Home = () => {
             <PageTitle title="Career Counseling | Home"></PageTitle>
             <Slider></Slider>
             <Services></Services>
+            <AboutUs></AboutUs>
+            <Gallery></Gallery>
         </div>
     );
 };
