@@ -1,8 +1,8 @@
 # **Project name:**
-Career Counselling
+Career Counseling
 
 # **Short description of the project:**
-Career Counselling is a career Guidance website for you to improve your life. We provide consultancy services to encourage, manage and boost your career.
+Career Counseling is a career Guidance website for you to improve your life. We provide consultancy services to encourage, manage and boost your career.
 
 # **Key features of the project:**
 1.	Provides best services with lower price.
